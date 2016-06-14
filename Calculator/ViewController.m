@@ -9,9 +9,13 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    double result;
+}
 @property (weak, nonatomic) IBOutlet UITextField *firstNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *secondNumberTextField;
 @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
+
 @end
 
 @implementation ViewController
@@ -22,38 +26,45 @@
     
 }
 
--(double)addNumbersWithFirstNumber:(double)firstNumber andSecondNumber: (double) secondNumber {
-    double results = 0;
-    results = firstNumber + secondNumber;
-    return results;
+-(double)calculateWithANumber:(double) firstNumber aSecondNumber:(double) secondNumber andAnOperation:(char) operation{
+    
+    switch (operation) {
+        case '+':
+            result = firstNumber + secondNumber;
+            [self printResult];
+            break;
+        case '-':
+            result = firstNumber - secondNumber;
+            [self printResult];
+            break;
+        case '*':
+            result = firstNumber * secondNumber;
+            [self printResult];
+            break;
+        case '/':
+            result = firstNumber / secondNumber;
+            [self printResult];
+            break;
+        default:
+            break;
+    }
+    
+    return result;
 }
--(double)subtractNumbersWithFirstNumber:(double)firstNumber andSecondNumber: (double) secondNumber {
-    double results = 0;
-    results = firstNumber - secondNumber;
-    return results;
-}
--(double)multiplyNumbersWithFirstNumber:(double)firstNumber andSecondNumber: (double) secondNumber {
-    double results = 0;
-    results = firstNumber * secondNumber;
-    return results;
-}
--(double)divideNumbersWithFirstNumber:(double)firstNumber andSecondNumber: (double) secondNumber {
-    double results = 0;
-    results = firstNumber / secondNumber;
-    return results;
+
+-(void) printResult {
+    self.resultsLabel.text = [NSString stringWithFormat:@"%.02f", result];
 }
 
 - (IBAction)addButton:(id)sender {
-    self.resultsLabel.text = [NSString stringWithFormat:@"%f", [self addNumbersWithFirstNumber:self.firstNumberTextField.text.doubleValue andSecondNumber:self.secondNumberTextField.text.doubleValue]];
+    [self calculateWithANumber:self.firstNumberTextField.text.doubleValue aSecondNumber:self.secondNumberTextField.text.doubleValue andAnOperation:'+'];
 }
 - (IBAction)subtractButton:(id)sender {
-    self.resultsLabel.text = [NSString stringWithFormat:@"%f", [self subtractNumbersWithFirstNumber:self.firstNumberTextField.text.doubleValue andSecondNumber:self.secondNumberTextField.text.doubleValue]];
-}
+    [self calculateWithANumber:self.firstNumberTextField.text.doubleValue aSecondNumber:self.secondNumberTextField.text.doubleValue andAnOperation:'-'];}
 - (IBAction)multiplyButton:(id)sender {
-    self.resultsLabel.text = [NSString stringWithFormat:@"%f", [self multiplyNumbersWithFirstNumber:self.firstNumberTextField.text.doubleValue andSecondNumber:self.secondNumberTextField.text.doubleValue]];
-}
+    [self calculateWithANumber:self.firstNumberTextField.text.doubleValue aSecondNumber:self.secondNumberTextField.text.doubleValue andAnOperation:'*'];}
 - (IBAction)divideButton:(id)sender {
-    self.resultsLabel.text = [NSString stringWithFormat:@"%f", [self divideNumbersWithFirstNumber:self.firstNumberTextField.text.doubleValue andSecondNumber:self.secondNumberTextField.text.doubleValue]];
+   [self calculateWithANumber:self.firstNumberTextField.text.doubleValue aSecondNumber:self.secondNumberTextField.text.doubleValue andAnOperation:'/'];
 }
 
 @end
