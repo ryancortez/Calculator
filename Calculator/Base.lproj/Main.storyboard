@@ -40,20 +40,9 @@
                                     <constraint firstAttribute="height" constant="52" id="xwe-Wy-IJY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="+"/>
                                 <connections>
                                     <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKi-Mx-NKx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vae-fN-rCu">
-                                <rect key="frame" x="20" y="243" width="560" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="QgQ-Wu-ISe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Subtract"/>
-                                <connections>
-                                    <action selector="subtractButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c02-Jh-GPh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pL1-kt-NmG">
@@ -63,7 +52,7 @@
                                     <constraint firstAttribute="height" constant="39" id="H3D-5i-Msp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Divide"/>
+                                <state key="normal" title="/"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="H3D-5i-Msp"/>
@@ -88,9 +77,20 @@
                                     <constraint firstAttribute="height" constant="52" id="3Oj-Xm-L1R"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Multiply"/>
+                                <state key="normal" title="*"/>
                                 <connections>
                                     <action selector="multiplyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oz5-h9-NC0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vae-fN-rCu">
+                                <rect key="frame" x="20" y="243" width="560" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="QgQ-Wu-ISe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="subtractButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c02-Jh-GPh"/>
                                 </connections>
                             </button>
                         </subviews>
