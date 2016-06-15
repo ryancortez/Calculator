@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Calculator.h"
 
 @interface ViewController ()
 {
@@ -14,66 +15,51 @@
     BOOL operationButtonIsHighlighted;
     BOOL previousCalculationWasDone;
 }
+
 @property (weak, nonatomic) IBOutlet UITextField *firstNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *secondNumberTextField;
 @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
+@property (strong, nonatomic) Calculator *calculator;
 
 @end
 
-typedef enum{
-    Add, Subtract, Multiply, Divide
-} Operators;
+
 
 @implementation ViewController
 
--(double)calculateWithANumber:(double) firstNumber aSecondNumber:(double) secondNumber andAnOperation:(Operators) operation{
-    
-    switch (operation) {
-        case Add:
-            result = firstNumber + secondNumber;
-            [self printResult];
-            [self resetTextFields];
-            break;
-        case Subtract:
-            result = firstNumber - secondNumber;
-            [self printResult];
-            [self resetTextFields];
-            break;
-        case Multiply:
-            result = firstNumber * secondNumber;
-            [self printResult];
-            [self resetTextFields];
-            break;
-        case Divide:
-            result = firstNumber / secondNumber;
-            [self printResult];
-            [self resetTextFields];
-            break;
-        default:
-            break;
-    }
-    
-    return result;
+-(void) viewDidLoad {
+    self.calculator = [[Calculator alloc] init];
 }
+
 
 -(void) printResult {
     self.resultsLabel.text = [NSString stringWithFormat:@"%.02f", result];
 }
 
--(void) resetTextFields {
-    self.firstNumberTextField.text = @"";
-    self.secondNumberTextField.text = @"";
-}
 
 - (IBAction)addButton:(id)sender {
-    [self calculateWithANumber:self.firstNumberTextField.text.doubleValue aSecondNumber:self.secondNumberTextField.text.doubleValue andAnOperation: Add];
+    double firstNumber = self.firstNumberTextField.text.doubleValue;
+    double secondNumber = self.secondNumberTextField.text.doubleValue;
+    result = [self.calculator add:firstNumber secondNumber:secondNumber];
+    [self printResult];
 }
 - (IBAction)subtractButton:(id)sender {
-    [self calculateWithANumber:self.firstNumberTextField.text.doubleValue aSecondNumber:self.secondNumberTextField.text.doubleValue andAnOperation: Subtract];}
+    double firstNumber = self.firstNumberTextField.text.doubleValue;
+    double secondNumber = self.secondNumberTextField.text.doubleValue;
+    result = [self.calculator subtract:firstNumber secondNumber:secondNumber];
+    [self printResult];
+}
 - (IBAction)multiplyButton:(id)sender {
-    [self calculateWithANumber:self.firstNumberTextField.text.doubleValue aSecondNumber:self.secondNumberTextField.text.doubleValue andAnOperation: Multiply];}
+    double firstNumber = self.firstNumberTextField.text.doubleValue;
+    double secondNumber = self.secondNumberTextField.text.doubleValue;
+    result =[self.calculator multiply:firstNumber secondNumber:secondNumber];
+    [self printResult];
+}
 - (IBAction)divideButton:(id)sender {
-   [self calculateWithANumber:self.firstNumberTextField.text.doubleValue aSecondNumber:self.secondNumberTextField.text.doubleValue andAnOperation: Divide];
+    double firstNumber = self.firstNumberTextField.text.doubleValue;
+    double secondNumber = self.secondNumberTextField.text.doubleValue;
+    result = [self.calculator divide:firstNumber secondNumber:secondNumber];
+    [self printResult];
 }
 
 
