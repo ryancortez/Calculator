@@ -11,6 +11,8 @@
 @interface ViewController ()
 {
     double result;
+    BOOL operationButtonIsHighlighted;
+    BOOL previousCalculationWasDone;
 }
 @property (weak, nonatomic) IBOutlet UITextField *firstNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *secondNumberTextField;
