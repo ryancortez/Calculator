@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		94BAF6EB1D10799F00EF1FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BAF6EA1D10799F00EF1FBD /* main.m */; };
 		94BAF6EE1D10799F00EF1FBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BAF6ED1D10799F00EF1FBD /* AppDelegate.m */; };
-		94BAF6F11D10799F00EF1FBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BAF6F01D10799F00EF1FBD /* ViewController.m */; };
+		94BAF6F11D10799F00EF1FBD /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BAF6F01D10799F00EF1FBD /* CalculatorViewController.m */; };
 		94BAF6F41D10799F00EF1FBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BAF6F21D10799F00EF1FBD /* Main.storyboard */; };
 		94BAF6F61D10799F00EF1FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BAF6F51D10799F00EF1FBD /* Assets.xcassets */; };
 		94BAF6F91D10799F00EF1FBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BAF6F71D10799F00EF1FBD /* LaunchScreen.storyboard */; };
@@ -21,8 +21,8 @@
 		94BAF6EA1D10799F00EF1FBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94BAF6EC1D10799F00EF1FBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94BAF6ED1D10799F00EF1FBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		94BAF6EF1D10799F00EF1FBD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		94BAF6F01D10799F00EF1FBD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		94BAF6EF1D10799F00EF1FBD /* CalculatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
+		94BAF6F01D10799F00EF1FBD /* CalculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
 		94BAF6F31D10799F00EF1FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94BAF6F51D10799F00EF1FBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94BAF6F81D10799F00EF1FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,13 +61,10 @@
 		94BAF6E81D10799F00EF1FBD /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				94BAF6EC1D10799F00EF1FBD /* AppDelegate.h */,
-				94BAF6ED1D10799F00EF1FBD /* AppDelegate.m */,
 				94EA64321D11CFC70079CBF6 /* Model */,
 				94EA64311D11CFB10079CBF6 /* View Controllers */,
 				94EA642F1D11CF980079CBF6 /* Views */,
 				94BAF6F21D10799F00EF1FBD /* Main.storyboard */,
-				94BAF6F51D10799F00EF1FBD /* Assets.xcassets */,
 				94BAF6F71D10799F00EF1FBD /* LaunchScreen.storyboard */,
 				94BAF6FA1D10799F00EF1FBD /* Info.plist */,
 				94BAF6E91D10799F00EF1FBD /* Supporting Files */,
@@ -78,6 +75,9 @@
 		94BAF6E91D10799F00EF1FBD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				94BAF6EC1D10799F00EF1FBD /* AppDelegate.h */,
+				94BAF6ED1D10799F00EF1FBD /* AppDelegate.m */,
+				94BAF6F51D10799F00EF1FBD /* Assets.xcassets */,
 				94BAF6EA1D10799F00EF1FBD /* main.m */,
 			);
 			name = "Supporting Files";
@@ -93,8 +93,8 @@
 		94EA64311D11CFB10079CBF6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				94BAF6EF1D10799F00EF1FBD /* ViewController.h */,
-				94BAF6F01D10799F00EF1FBD /* ViewController.m */,
+				94BAF6EF1D10799F00EF1FBD /* CalculatorViewController.h */,
+				94BAF6F01D10799F00EF1FBD /* CalculatorViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BAF6F11D10799F00EF1FBD /* ViewController.m in Sources */,
+				94BAF6F11D10799F00EF1FBD /* CalculatorViewController.m in Sources */,
 				94EA642E1D11CF8E0079CBF6 /* Calculator.m in Sources */,
 				94BAF6EE1D10799F00EF1FBD /* AppDelegate.m in Sources */,
 				94BAF6EB1D10799F00EF1FBD /* main.m in Sources */,
